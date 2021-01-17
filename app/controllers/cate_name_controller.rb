@@ -3,23 +3,23 @@ class CateNameController < ApplicationController
 
   protect_from_forgery except: :create
   def index
-    @cate_names = CateName.all
+    @cate_names = CateName.all.order(id: :desc)
   end
 
   def create
     cate_name = CateName.new(cate_name_params)
 
     if cate_name.valid? && cate_name.save
-      render :json => cate_name.to_json
+      redirect_to cate_name_index_path
     else
-      render :json => { :errors => cate_name.errors.full_messages }
+      render plain: cate_name.errors.full_messages
     end
   end
 
   private
 
   def cate_name_params
-    params.permit(:name, :description)
+    params.require(:cate_name).permit(:name, :description)
   end
 
   def validate_token
