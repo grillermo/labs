@@ -54,15 +54,18 @@ footer {
   text-align: center;
 }
 
-section#title {
-    height: 211px;
-}
-
-section#title h1 {
+h1 {
     color: #f9f9f9;
     font-size: 2em;
     text-align: center;
-    padding: 6em 2.5em 9em 2.5em;
+    padding: 2em;
+}
+
+h2 {
+    color: #f9f9f9;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 1em;
 }
 
 section#names {

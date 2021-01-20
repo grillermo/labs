@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.friendly.find(params[:id])
+    @nicknames = @person.nicknames.order(id: :desc)
   end
 
   def create

@@ -3,7 +3,25 @@
     Los 10,000 nombres de
     = @person.name
 
+%section
+  %h2
+    Nuevo
+  = form_for :nickname, url: '/nickname' do |f|
+    %p
+      = f.label :nombre
+      = f.text_field :name
+
+    %p
+      = f.label :description
+      = f.text_area :description
+
+    = f.hidden_field :people_id, value: @person.id
+
+    %p
+      = f.submit
+
 %section#names
-  - @person.nicknames.each do |nickname|
+  - @nicknames.each do |nickname|
     .fan
       = nickname.name
+

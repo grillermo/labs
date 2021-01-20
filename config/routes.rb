@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :aaonoob
 
   resources :people
+
+  resources :nickname
 end
