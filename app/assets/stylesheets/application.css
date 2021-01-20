@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.centering-wrapper {
+    position: relative;
+}
+
+.center {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/* box-sizing end */
+/* Fabian Luna http//fabian.mx */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+width: 90%; }
+
+body {
+    font-size: 16px;
+    text-align: justify;
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    background-color: #1d1d1d;
+    color: #f9f9f9;
+    line-height: 1.5em;
+}
+
+a {
+  color: white;
+}
+
+footer {
+  text-align: center;
+}
+
+section#title {
+    height: 211px;
+}
+
+section#title h1 {
+    color: #f9f9f9;
+    font-size: 2em;
+    text-align: center;
+    padding: 6em 2.5em 9em 2.5em;
+}
+
+section#names {
+    text-align: center;
+    font-size: 1em;
+    padding: 6em 2.5em 9em 2.5em;
+}
+section#names .fan {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.5em 0.7em;
+    transition: all 0.5s ease;
+    color: #f9f9f9;
+}
+section#names .fan:hover {
+    background-color: #000;
+}
+section#names div#loader {
+    margin-top: 3em;
+    text-align: center;
+}

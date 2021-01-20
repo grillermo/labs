@@ -1,0 +1,9 @@
+%section#title
+  %h1 
+    Los 10,000 nombres de
+    = @person.name
+
+%section#names
+  - @person.nicknames.each do |nickname|
+    .fan
+      = nickname.name

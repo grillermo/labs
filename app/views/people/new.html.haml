@@ -1,0 +1,7 @@
+= form_for :person, url: '/people' do |f|
+  %p
+    = f.label :nombre
+    = f.text_field :name
+
+  %p
+    = f.submit
