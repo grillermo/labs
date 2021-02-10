@@ -1,0 +1,22 @@
+%section#scratch
+  %h2
+    Scratch
+  = form_for @scratch do |f|
+    %p
+      = f.text_area :content, value: @scratch.content
+
+    = f.hidden_field :id, value: @scratch.id
+
+    %p
+      = f.submit
+
+:javascript
+  $("#scratch_content").focus().select();
+
+  $(document).on('keydown', '#scratch_content', function(e) {
+    if(e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
+      $(this).parents('form').submit()
+    }
+
+  })
+
