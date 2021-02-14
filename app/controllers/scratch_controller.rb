@@ -18,10 +18,15 @@ class ScratchController < ApplicationController
 
   def update
     @scratch = Scratch.find(scratch_params[:id])
-    @scratch.update(content: scratch_params[:content])
+
+    if @scratch.content.strip != scratch_params[:content].strip
+      @scratch = Scratch.new(content: scratch_params[:content])
+    else
+      @scratch.update_attributes(content: scratch_params[:content])
+    end
 
     if @scratch.valid? && @scratch.save
-      redirect_to action: :show
+      redirect_to @scratch
     else
       render plain: person.errors.full_messages
     end

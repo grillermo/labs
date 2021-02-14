@@ -5,6 +5,8 @@
     %p
       - if scratch_is_link?(@scratch)
         = link_to(@scratch.content, @scratch.content, 'target' => '_blank') 
+        %br
+        = f.text_field :content, value: @scratch.content
       - else
         = f.text_area :content, value: @scratch.content
 
