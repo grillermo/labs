@@ -1,6 +1,6 @@
 %section#scratch
   %h2
-    Scratch
+    Scratch #{@scratch.id}
   = form_for @scratch do |f|
     %p
       = f.text_area :content, value: @scratch.content
@@ -9,6 +9,8 @@
 
     %p
       = f.submit
+  %h2
+    = render :partial => 'navigation'
 
 :javascript
   $("#scratch_content").focus().select();

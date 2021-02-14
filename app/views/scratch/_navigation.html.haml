@@ -1,0 +1,8 @@
+- previous_scratch = Scratch.find_by(id: @scratch.id - 1)
+- next_scratch = Scratch.find_by(id: @scratch.id + 1)
+
+- if previous_scratch.present?
+  = link_to('<', scratch_path(previous_scratch)) 
+
+- if next_scratch.present?
+  = link_to('>', scratch_path(next_scratch)) 

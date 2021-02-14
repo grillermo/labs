@@ -1,11 +1,19 @@
 class ScratchController < ApplicationController
   def index
     @scratch = Scratch.last || Scratch.create
+
     render :show
   end
 
   def show
-    @scratch = Scratch.last || Scratch.create
+    id = params[:id] 
+    @scratch = Scratch.find_by(id: id)
+
+    if @scratch
+      @scratch
+    else
+      @scratch = Scratch.create
+    end
   end
 
   def update
