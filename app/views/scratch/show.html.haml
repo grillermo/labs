@@ -3,7 +3,10 @@
     Scratch #{@scratch.id}
   = form_for @scratch do |f|
     %p
-      = f.text_area :content, value: @scratch.content
+      - if scratch_is_link?(@scratch)
+        = link_to(@scratch.content, @scratch.content, 'target' => '_blank') 
+      - else
+        = f.text_area :content, value: @scratch.content
 
     = f.hidden_field :id, value: @scratch.id
 
