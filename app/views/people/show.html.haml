@@ -3,7 +3,14 @@
     Los 10,000 nombres de
     = @person.name
 
-%section
+
+%section#names
+  - @nicknames.each do |nickname|
+    .fan
+      = nickname.name
+
+%section#new_name_form
+  %hr
   %h2
     Nuevo
   = form_for :nickname, url: '/nickname' do |f|
@@ -11,17 +18,12 @@
       = f.label :nombre
       = f.text_field :name
 
-    %p
-      = f.label :description
-      = f.text_area :description
-
     = f.hidden_field :people_id, value: @person.id
 
     %p
-      = f.submit
+      = f.submit 'guardar'
 
-%section#names
-  - @nicknames.each do |nickname|
-    .fan
-      = nickname.name
-
+:javascript
+  $(document).ready(function() {
+    $("html, body").scrollTop(10000);
+  });

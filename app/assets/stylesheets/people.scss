@@ -1,3 +1,37 @@
 // Place all the styles related to the people controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+section#names {
+    text-align: center;
+    font-size: 1em;
+}
+section#names .fan {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.5em 0.7em;
+    transition: all 0.5s ease;
+    color: #f9f9f9;
+}
+section#names .fan:hover {
+    background-color: #000;
+}
+section#names div#loader {
+    margin-top: 3em;
+    text-align: center;
+}
+
+section#new_name_form {
+  input[type=submit] {
+    background-color: white;
+    border: 0;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding: 10px;
+
+    @media(max-width: 400px) {
+      width: 100%; /* Large, mobile-friendly touch target */
+    }
+  }
+}

@@ -58,32 +58,13 @@ h1 {
     color: #f9f9f9;
     font-size: 2em;
     text-align: center;
-    padding: 2em;
+    padding: 1em;
+    line-height: 40px;
 }
 
 h2 {
     color: #f9f9f9;
     font-size: 1.2em;
     text-align: left;
-    padding: 1em;
 }
 
-section#names {
-    text-align: center;
-    font-size: 1em;
-    padding: 6em 2.5em 9em 2.5em;
-}
-section#names .fan {
-    display: inline-block;
-    vertical-align: top;
-    padding: 0.5em 0.7em;
-    transition: all 0.5s ease;
-    color: #f9f9f9;
-}
-section#names .fan:hover {
-    background-color: #000;
-}
-section#names div#loader {
-    margin-top: 3em;
-    text-align: center;
-}
