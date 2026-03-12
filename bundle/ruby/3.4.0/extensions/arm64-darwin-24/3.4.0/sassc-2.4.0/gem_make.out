@@ -1,0 +1,20 @@
+current directory: /Users/grillermo/c/labs/bundle/ruby/3.4.0/gems/sassc-2.4.0/ext
+/Users/grillermo/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/grillermo/c/labs/bundle/ruby/3.4.0/gems/sassc-2.4.0/ext
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260312-44849-hjvp6s sitelibdir\=./.gem.20260312-44849-hjvp6s clean
+
+current directory: /Users/grillermo/c/labs/bundle/ruby/3.4.0/gems/sassc-2.4.0/ext
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260312-44849-hjvp6s sitelibdir\=./.gem.20260312-44849-hjvp6s
+compiling ./libsass/src/ast.cpp
+compiling ./libsass/src/ast2c.cpp
+compiling ./libsass/src/ast_fwd_decl.cpp
+make: *** [ast2c.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [ast.o] Error 1
+make: *** [ast_fwd_decl.o] Error 1
+compiling ./libsass/src/ast_sel_cmp.cpp
+make: *** [ast_sel_cmp.o] Error 1
+
+make failed, exit code 2
