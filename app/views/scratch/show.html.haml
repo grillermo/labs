@@ -1,29 +1,43 @@
-%section#scratch
-  %h2
-    Scratch #{@scratch.id}
-  = form_for @scratch do |f|
-    %p
-      - if scratch_is_link?(@scratch)
-        = link_to(@scratch.content, @scratch.content, 'target' => '_blank') 
-        %br
-        = f.text_field :content, value: @scratch.content
-      - else
-        = f.text_area :content, value: @scratch.content
+%section#scratch.container
+  .info-box
+    %p.scratch-label
+      Scratch #{@scratch.id}
+    - if scratch_is_link?(@scratch)
+      %p
+        = link_to(@scratch.content, @scratch.content, target: '_blank')
+    - elsif scratch_has_link_words?(@scratch)
+      %p= render_scratch_content_with_links(@scratch)
+    - else
+      %p= @scratch.content
 
-    = f.hidden_field :id, value: @scratch.id
+    .scratch-navigation
+      = render partial: 'navigation'
 
-    %p
-      = f.submit
-  %h2
-    = render :partial => 'navigation'
+  .input-box
+    = form_for @scratch do |f|
+      .grow-wrap{"data-replicated-value" => @scratch.content}
+        = f.text_area :content, value: @scratch.content, placeholder: 'Type here...'
+      = f.hidden_field :id, value: @scratch.id
+      .scratch-actions
+        = f.submit 'Save'
 
 :javascript
-  $("#scratch_content").focus().select();
+  const scratchContent = $("#scratch_content");
+
+  const syncScratchContent = function() {
+    this.parentNode.dataset.replicatedValue = this.value;
+  };
+
+  scratchContent.each(function() {
+    syncScratchContent.call(this);
+  }).focus().select();
+
+  $(document).on('input', '#scratch_content', function() {
+    syncScratchContent.call(this);
+  });
 
   $(document).on('keydown', '#scratch_content', function(e) {
     if(e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
       $(this).parents('form').submit()
     }
-
-  })
-
+  });
