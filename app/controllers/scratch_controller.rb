@@ -5,17 +5,6 @@ class ScratchController < ApplicationController
     render :show
   end
 
-  def show
-    id = params[:id] 
-    @scratch = Scratch.find_by(id: id)
-
-    if @scratch
-      @scratch
-    else
-      @scratch = Scratch.create
-    end
-  end
-
   def update
     @scratch = Scratch.find(scratch_params[:id])
 

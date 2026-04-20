@@ -10,9 +10,6 @@
     - else
       %p= @scratch.content
 
-    .scratch-navigation
-      = render partial: 'navigation'
-
   .input-box
     = form_for @scratch do |f|
       .grow-wrap{"data-replicated-value" => @scratch.content}
